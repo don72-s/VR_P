@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5092981242726156249}
   - component: {fileID: 5092981242726156260}
   - component: {fileID: 5092981242726156261}
+  - component: {fileID: 5310225319488528796}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -352,3 +353,15 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &5310225319488528796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5092981242726156254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6a1f3d1c83ad941afc39607e67d4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

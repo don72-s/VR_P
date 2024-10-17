@@ -42,9 +42,13 @@ public class TilePosFitter : MonoBehaviour {
 
     void OnEnter(SelectEnterEventArgs _args) {
 
+
         isCorrect = _args.interactableObject.transform.gameObject == correctPuzzleTile;
 
+        _args.interactableObject.transform.gameObject.GetComponent<Tile>().SetBaseParent();
+
         puzzlePlaced?.Invoke();
+
 
     }
 
