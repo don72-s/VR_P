@@ -14,6 +14,19 @@ public class ChessManager : MonoBehaviour {
     [SerializeField]
     UnityEvent puzzleClearAction;
 
+    [Header("Lock Action Gestures")]
+    [SerializeField]
+    GameObject moveLocomotion;
+    [SerializeField]
+    GameObject grabMoveLocomotion;
+    [SerializeField]
+    GameObject climbLocomotion;
+
+    bool turnState;
+    bool moveState;
+    bool grabMoveState;
+    bool climbState;
+
     bool isClear = false;
     bool gameStarted = false;
 
@@ -29,9 +42,36 @@ public class ChessManager : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// 텔레포트 이외의 모든 입력 행동 제한
+    /// </summary>
+    void LockOtherActions() {
+
+        moveState = moveLocomotion.activeSelf;
+        grabMoveState = grabMoveLocomotion.activeSelf;
+        climbState = climbLocomotion.activeSelf;
+
+        moveLocomotion.SetActive(false);
+        grabMoveLocomotion.SetActive(false);
+        climbLocomotion.SetActive(false);
+
+    }
+
+    /// <summary>
+    /// 행동제한 해제
+    /// </summary>
+    void ReleaseOtherActions() {
+
+        moveLocomotion.SetActive(moveState);
+        grabMoveLocomotion.SetActive(grabMoveState);
+        climbLocomotion.SetActive(climbState);
+    }
+
     public void OnTeleported(TeleportingEventArgs _args) {
 
         if (!isClear) {
+
+            ReleaseOtherActions();
 
             gameStarted = false;
 
@@ -58,6 +98,7 @@ public class ChessManager : MonoBehaviour {
         if (!gameStarted) {
 
             gameStarted = true;
+            LockOtherActions();
             resetAreas.SetActive(true);
 
         }
@@ -84,6 +125,7 @@ public class ChessManager : MonoBehaviour {
     
         isClear = true;
         resetAreas.SetActive(false);
+        ReleaseOtherActions();
 
         puzzleClearAction?.Invoke();
 
