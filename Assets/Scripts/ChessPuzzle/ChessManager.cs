@@ -129,8 +129,6 @@ public class ChessManager : MonoBehaviour {
 
         puzzleClearAction?.Invoke();
 
-        Debug.Log("clear!");
-
     }
 
 }

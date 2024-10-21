@@ -14,8 +14,6 @@ public class ChessTile : MonoBehaviour {
 
     [SerializeField]
     Material visitedMaterial;
-    [SerializeField]
-    Material movableMaterial;
 
     [Header("Movable Tile")]
     [SerializeField]
