@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class ChestInteractable : XRBaseInteractable {
@@ -23,10 +24,23 @@ public class ChestInteractable : XRBaseInteractable {
     float destRot = 0;
     float otherHalfAngle;
 
+    [Header("Events")]
+    [SerializeField]
+    public UnityEvent OpenEvent;
+    [SerializeField]
+    public UnityEvent closeEvent;
+
+    public bool IsOpened {  get; private set; }
 
     Coroutine chestOpenCoroutine = null;
 
     IXRSelectInteractor interactor;
+
+    private void Start() {
+        
+        IsOpened = false;
+
+    }
 
     protected override void OnEnable() {
 
@@ -92,8 +106,12 @@ public class ChestInteractable : XRBaseInteractable {
         interactor = null;
 
         if (curRot < criticalAngle) {
+            IsOpened = false;
+            closeEvent?.Invoke();
             destRot = 0;
         } else {
+            IsOpened = true;
+            OpenEvent?.Invoke();
             destRot = maxOpenAxis;
         }
 

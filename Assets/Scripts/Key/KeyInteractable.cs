@@ -50,8 +50,8 @@ public class KeyInteractable : XRGrabInteractable {
                     gameObject.SetActive(false);
                     other.gameObject.SetActive(false);
 
-                    Instantiate(combinedObj, (transform.position + other.transform.position) / 2, Quaternion.identity);
-                    
+                    GameObject tmp = Instantiate(combinedObj, (transform.position + other.transform.position) / 2, Quaternion.identity);
+                    tmp.transform.SetParent(transform.parent);
 
                 }
 
