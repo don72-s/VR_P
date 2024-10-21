@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class PuzzleManager : MonoBehaviour {
 

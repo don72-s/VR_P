@@ -40,6 +40,8 @@ public class PuzzleArea : MonoBehaviour {
             originRayInteractorObjL.SetActive(false);
             puzzleRoomRayInteractorObjL.SetActive(true);
 
+            TilePosFitter.sfxVolume = 1;
+
         }
 
     }
@@ -60,6 +62,8 @@ public class PuzzleArea : MonoBehaviour {
 
             originRayInteractorObjL.SetActive(true);
             puzzleRoomRayInteractorObjL.SetActive(false);
+
+            TilePosFitter.sfxVolume = 0;
 
         }
 

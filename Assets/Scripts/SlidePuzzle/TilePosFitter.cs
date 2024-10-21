@@ -2,13 +2,16 @@ using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(XRSocketInteractor))]
+[RequireComponent(typeof(XRSocketInteractor), typeof(AudioSource))]
 public class TilePosFitter : MonoBehaviour {
+
+    public static float sfxVolume = 0;
 
     [SerializeField]
     GameObject correctPuzzleTile;
 
     XRSocketInteractor interactor;
+    AudioSource audioSource;
 
     bool isCorrect;
     public event Action puzzlePlaced;
@@ -16,6 +19,7 @@ public class TilePosFitter : MonoBehaviour {
     private void Awake() {
         
         interactor = GetComponent<XRSocketInteractor>();
+        audioSource = GetComponent<AudioSource>();
         isCorrect = (interactor == null);
 
     }
@@ -49,6 +53,8 @@ public class TilePosFitter : MonoBehaviour {
 
         puzzlePlaced?.Invoke();
 
+        audioSource.volume = sfxVolume;
+        audioSource.Play();
 
     }
 

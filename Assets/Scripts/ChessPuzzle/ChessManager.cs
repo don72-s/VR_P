@@ -22,7 +22,6 @@ public class ChessManager : MonoBehaviour {
     [SerializeField]
     GameObject climbLocomotion;
 
-    bool turnState;
     bool moveState;
     bool grabMoveState;
     bool climbState;

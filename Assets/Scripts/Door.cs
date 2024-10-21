@@ -1,12 +1,16 @@
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem.Editor;
 
 public class Door : MonoBehaviour {
 
     [SerializeField]
     float openDelta = -90;
+
+    [SerializeField]
+    UnityEvent onOpenEvent;
 
     Quaternion startRot;
 
@@ -19,6 +23,7 @@ public class Door : MonoBehaviour {
     public void OpenDoor() {
 
         StartCoroutine(OpenDoorCo());
+        onOpenEvent?.Invoke();
 
     }
 
