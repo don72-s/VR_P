@@ -5,6 +5,9 @@ using UnityEngine.InputSystem.Editor;
 
 public class Door : MonoBehaviour {
 
+    [SerializeField]
+    float openDelta = -90;
+
     Quaternion startRot;
 
     private void Awake() {
@@ -22,7 +25,7 @@ public class Door : MonoBehaviour {
     IEnumerator OpenDoorCo() {
 
         float time = 0;
-        Quaternion destRot = startRot * Quaternion.Euler(0, -90, 0);
+        Quaternion destRot = startRot * Quaternion.Euler(0, openDelta, 0);
 
         while (time < 1) {
 
