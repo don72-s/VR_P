@@ -2,7 +2,6 @@ using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem.Editor;
 
 public class Door : MonoBehaviour {
 
