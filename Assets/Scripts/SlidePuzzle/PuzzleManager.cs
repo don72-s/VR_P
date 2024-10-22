@@ -30,8 +30,6 @@ public class PuzzleManager : MonoBehaviour {
 
         }
 
-        Debug.Log("Clear!");
-
         puzzleClearAction?.Invoke();
 
         foreach (TilePosFitter _tile in tiles) {
