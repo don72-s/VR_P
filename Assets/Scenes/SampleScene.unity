@@ -4328,7 +4328,7 @@ Transform:
   - {fileID: 135631694}
   - {fileID: 1292033933}
   m_Father: {fileID: 1855927520}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471412817
 GameObject:
@@ -12328,10 +12328,6 @@ PrefabInstance:
       value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 3416098961554632070, guid: a4fc535a36b513048a1933cd0ad153c9, type: 3}
-      propertyPath: offsetY
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416098961554632070, guid: a4fc535a36b513048a1933cd0ad153c9, type: 3}
       propertyPath: pushedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -12361,7 +12357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416098961554632071, guid: a4fc535a36b513048a1933cd0ad153c9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3416098961554632071, guid: a4fc535a36b513048a1933cd0ad153c9, type: 3}
       propertyPath: m_LocalScale.x
@@ -17162,8 +17158,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 461631887}
   - {fileID: 1428875788}
+  - {fileID: 461631887}
   m_Father: {fileID: 1199271753}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
