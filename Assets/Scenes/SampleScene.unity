@@ -12328,6 +12328,10 @@ PrefabInstance:
       value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 3416098961554632070, guid: a4fc535a36b513048a1933cd0ad153c9, type: 3}
+      propertyPath: offsetY
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416098961554632070, guid: a4fc535a36b513048a1933cd0ad153c9, type: 3}
       propertyPath: pushedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
